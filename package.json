@@ -7,11 +7,13 @@
   "author": "Juan Latorre | juanlatorreharcha@gmail.com",
   "license": "MIT",
   "scripts": {
-    "dev": "dotenv-vault pull development && bob-tsm --watch=src src/server.ts",
+    "dev": "bob-tsm --watch=src src/server.ts",
+    "env:dev": "dotenv-vault pull development",
+    "env:prod": "dotenv-vault pull production",
+    "lint:fix": "eslint --fix ./src",
     "prepare": "husky install && npx prisma generate",
     "pretty": "pretty-quick --staged",
     "start": "bob-tsm src/server.ts",
-    "lint:fix": "eslint --fix ./src",
     "typecheck": "tsc"
   },
   "devDependencies": {
@@ -34,6 +36,7 @@
     "@pothos/plugin-relay": "^3.40.0",
     "@prisma/client": "^4.13.0",
     "dotenv": "^16.0.3",
+    "fastify": "^4.15.0",
     "graphql": "^16.6.0",
     "graphql-scalars": "^1.21.3",
     "graphql-yoga": "^3.9.1",
