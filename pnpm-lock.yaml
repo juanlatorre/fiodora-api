@@ -6,13 +6,13 @@ dependencies:
     version: 3.29.0(graphql@16.6.0)
   "@pothos/plugin-prisma":
     specifier: ^3.47.2
-    version: 3.47.2(@pothos/core@3.29.0)(@prisma/client@4.13.0)(graphql@16.6.0)(typescript@5.0.4)
-  "@pothos/plugin-relay":
-    specifier: ^3.40.0
-    version: 3.40.0(@pothos/core@3.29.0)(graphql@16.6.0)
+    version: 3.47.2(@pothos/core@3.29.0)(@prisma/client@4.9.0)(graphql@16.6.0)(typescript@5.0.4)
+  "@pothos/plugin-validation":
+    specifier: ^3.9.0
+    version: 3.9.0(@pothos/core@3.29.0)(graphql@16.6.0)(zod@3.21.4)
   "@prisma/client":
-    specifier: ^4.13.0
-    version: 4.13.0(prisma@4.13.0)
+    specifier: 4.9.0
+    version: 4.9.0(prisma@4.9.0)
   dotenv:
     specifier: ^16.0.3
     version: 16.0.3
@@ -29,8 +29,8 @@ dependencies:
     specifier: ^3.9.1
     version: 3.9.1(graphql@16.6.0)
   prisma:
-    specifier: ^4.13.0
-    version: 4.13.0
+    specifier: 4.9.0
+    version: 4.9.0
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -63,6 +63,9 @@ devDependencies:
   husky:
     specifier: ^8.0.3
     version: 8.0.3
+  pino-pretty:
+    specifier: ^10.0.0
+    version: 10.0.0
   prettier:
     specifier: ^2.8.7
     version: 2.8.7
@@ -70,7 +73,7 @@ devDependencies:
     specifier: ^3.1.3
     version: 3.1.3(prettier@2.8.7)
   typescript:
-    specifier: ^5.0.4
+    specifier: ~5.0.4
     version: 5.0.4
 
 packages:
@@ -495,10 +498,10 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@graphql-tools/schema@9.0.18(graphql@16.6.0):
+  /@graphql-tools/schema@9.0.19(graphql@16.6.0):
     resolution:
       {
-        integrity: sha512-Kckb+qoo36o5RSIVfBNU5XR5fOg4adNa1xuhhUgbQejDaI684tIJbTWwYbrDPVEGL/dqJJX3rrsq7RLufjNFoQ==,
+        integrity: sha512-oBRPoNBtCkk0zbUsyP4GaIzCt8C0aCI4ycIRUL67KK5pOHljKLBBtGT+Jr6hkzA74C8Gco8bpZPe7aWFjiaK2w==,
       }
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -783,10 +786,10 @@ packages:
       - typescript
     dev: true
 
-  /@oclif/plugin-update@3.1.12(@types/node@18.15.13)(typescript@5.0.4):
+  /@oclif/plugin-update@3.1.13(@types/node@18.15.13)(typescript@5.0.4):
     resolution:
       {
-        integrity: sha512-YoOUp6Ms6m+8iy9HBxJeOPMcAgzBAwKYLr3sWlrr102cgarVXv40D+K5CanWvYY/1qb35d0Qsk5fALr54kJ3Dg==,
+        integrity: sha512-onacVivHn6/iGmKCApdp8GsarqFjbUKOIeM3C3iUJWUY4mm1NIOZMiXcAlF3AYKnpti2maXt2VNZwt1+7Mf4oQ==,
       }
     engines: { node: ">=12.0.0" }
     dependencies:
@@ -810,10 +813,10 @@ packages:
       - typescript
     dev: true
 
-  /@oclif/plugin-warn-if-update-available@2.0.35(@types/node@18.15.13)(typescript@5.0.4):
+  /@oclif/plugin-warn-if-update-available@2.0.36(@types/node@18.15.13)(typescript@5.0.4):
     resolution:
       {
-        integrity: sha512-KnFWNTJuEPERkz3SDkAlYtAiGM3xKEPfTjgmu17iPT6B0jHgd9Q/zQUJYw48x5EXSKGcjcbFdMdrKxeDCFpRZw==,
+        integrity: sha512-mHWoEWFICw1Amqn8C7oURxOsR6sT2Hx+xNi30Jbsui5MrCIYYo369dhjl27VfaWlcLjVqpjMVzVFMn5zXjgzBw==,
       }
     engines: { node: ">=12.0.0" }
     dependencies:
@@ -887,7 +890,7 @@ packages:
       graphql: 16.6.0
     dev: false
 
-  /@pothos/plugin-prisma@3.47.2(@pothos/core@3.29.0)(@prisma/client@4.13.0)(graphql@16.6.0)(typescript@5.0.4):
+  /@pothos/plugin-prisma@3.47.2(@pothos/core@3.29.0)(@prisma/client@4.9.0)(graphql@16.6.0)(typescript@5.0.4):
     resolution:
       {
         integrity: sha512-S38uYCETz1310HK9iKg8V87qkUqPW8pfDGDqbbhURBt5nqFHu8iCTzjY28DPWa8E68rME3KZEtXBzc1mwZH4eg==,
@@ -900,7 +903,7 @@ packages:
       typescript: ">=4.7.2"
     dependencies:
       "@pothos/core": 3.29.0(graphql@16.6.0)
-      "@prisma/client": 4.13.0(prisma@4.13.0)
+      "@prisma/client": 4.9.0(prisma@4.9.0)
       "@prisma/generator-helper": 4.13.0
       graphql: 16.6.0
       typescript: 5.0.4
@@ -908,23 +911,25 @@ packages:
       - supports-color
     dev: false
 
-  /@pothos/plugin-relay@3.40.0(@pothos/core@3.29.0)(graphql@16.6.0):
+  /@pothos/plugin-validation@3.9.0(@pothos/core@3.29.0)(graphql@16.6.0)(zod@3.21.4):
     resolution:
       {
-        integrity: sha512-n5xwNZ2RerUo8qDW3/EOijv7bOEFfQBtGbumHdL92gJJOXYRQf/yqh97wuZRxGC6s7KQSFQW+JCmaOAuobEdmg==,
+        integrity: sha512-w2Q52l8JnhceKfDzuX1zOfspTZPc3gxxixgt10y1bB/h/kD2n/xwYXmAOLqyIN+TTr0Bi8/udYUDAAtWn9Q67A==,
       }
     peerDependencies:
       "@pothos/core": "*"
       graphql: ">=15.1.0"
+      zod: "*"
     dependencies:
       "@pothos/core": 3.29.0(graphql@16.6.0)
       graphql: 16.6.0
+      zod: 3.21.4
     dev: false
 
-  /@prisma/client@4.13.0(prisma@4.13.0):
+  /@prisma/client@4.9.0(prisma@4.9.0):
     resolution:
       {
-        integrity: sha512-YaiiICcRB2hatxsbnfB66uWXjcRw3jsZdlAVxmx0cFcTc/Ad/sKdHCcWSnqyDX47vAewkjRFwiLwrOUjswVvmA==,
+        integrity: sha512-bz6QARw54sWcbyR1lLnF2QHvRW5R/Jxnbbmwh3u+969vUKXtBkXgSgjDA85nji31ZBlf7+FrHDy5x+5ydGyQDg==,
       }
     engines: { node: ">=14.17" }
     requiresBuild: true
@@ -934,8 +939,8 @@ packages:
       prisma:
         optional: true
     dependencies:
-      "@prisma/engines-version": 4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a
-      prisma: 4.13.0
+      "@prisma/engines-version": 4.9.0-42.ceb5c99003b99c9ee2c1d2e618e359c14aef2ea5
+      prisma: 4.9.0
     dev: false
 
   /@prisma/debug@4.13.0:
@@ -951,17 +956,17 @@ packages:
       - supports-color
     dev: false
 
-  /@prisma/engines-version@4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a:
+  /@prisma/engines-version@4.9.0-42.ceb5c99003b99c9ee2c1d2e618e359c14aef2ea5:
     resolution:
       {
-        integrity: sha512-fsQlbkhPJf08JOzKoyoD9atdUijuGBekwoOPZC3YOygXEml1MTtgXVpnUNchQlRSY82OQ6pSGQ9PxUe4arcSLQ==,
+        integrity: sha512-M16aibbxi/FhW7z1sJCX8u+0DriyQYY5AyeTH7plQm9MLnURoiyn3CZBqAyIoQ+Z1pS77usCIibYJWSgleBMBA==,
       }
     dev: false
 
-  /@prisma/engines@4.13.0:
+  /@prisma/engines@4.9.0:
     resolution:
       {
-        integrity: sha512-HrniowHRZXHuGT9XRgoXEaP2gJLXM5RMoItaY2PkjvuZ+iHc0Zjbm/302MB8YsPdWozAPHHn+jpFEcEn71OgPw==,
+        integrity: sha512-t1pt0Gsp+HcgPJrHFc+d/ZSAaKKWar2G/iakrE07yeKPNavDP3iVKPpfXP22OTCHZUWf7OelwKJxQgKAm5hkgw==,
       }
     requiresBuild: true
     dev: false
@@ -1237,26 +1242,33 @@ packages:
       }
     dev: false
 
-  /@whatwg-node/fetch@0.8.5:
+  /@whatwg-node/events@0.0.3:
     resolution:
       {
-        integrity: sha512-pNvoYGPa0hjbVqs+r0blMjaWlrMeb0snwRCTAEdng5Jm00PY9wO4K8m99BmfLn6WED0FKOXTlF53+en/3xybqw==,
+        integrity: sha512-IqnKIDWfXBJkvy/k6tzskWTc2NK3LcqHlb+KHGCrjOCH4jfQckRX0NAiIcC/vIqQkzLYw2r2CTSwAxcrtcD6lA==,
+      }
+    dev: false
+
+  /@whatwg-node/fetch@0.8.6:
+    resolution:
+      {
+        integrity: sha512-DCduwI3yZdQMDUWtCU+CeuI7iKMtb/X3QrVrTYwLssWBUC+T2MRj5teoGFh5eylAMtPw6v7dY1lRbMV3aebVKw==,
       }
     dependencies:
       "@peculiar/webcrypto": 1.4.3
-      "@whatwg-node/node-fetch": 0.3.5
+      "@whatwg-node/node-fetch": 0.3.6
       busboy: 1.6.0
       urlpattern-polyfill: 7.0.0
       web-streams-polyfill: 3.2.1
     dev: false
 
-  /@whatwg-node/node-fetch@0.3.5:
+  /@whatwg-node/node-fetch@0.3.6:
     resolution:
       {
-        integrity: sha512-96crxTZn6L+xFefEKkeAZrGmZ7WUXDYUzAfBf1VtrdS5YozLnFbj9/CNZ8S2LdRS2iL3pMSCvE1xD1wiIAXkAA==,
+        integrity: sha512-w9wKgDO4C95qnXZRwZTfCmLWqyRnooGjcIwG0wADWjw9/HN0p7dtvtgSvItZtUyNteEvgTrd8QojNEqV6DAGTA==,
       }
     dependencies:
-      "@whatwg-node/events": 0.0.2
+      "@whatwg-node/events": 0.0.3
       busboy: 1.6.0
       fast-querystring: 1.1.1
       fast-url-parser: 1.1.3
@@ -1269,7 +1281,7 @@ packages:
         integrity: sha512-xTDJdPqr/wULxW3mGXQXD92SRXUm6jwQxqIvyHG17dykRTd21HuCaS2ggBn5lSAM/sYjjrT+OYv3fXbtS4+Mjw==,
       }
     dependencies:
-      "@whatwg-node/fetch": 0.8.5
+      "@whatwg-node/fetch": 0.8.6
       tslib: 2.5.0
     dev: false
 
@@ -1281,7 +1293,6 @@ packages:
     engines: { node: ">=6.5" }
     dependencies:
       event-target-shim: 5.0.1
-    dev: false
 
   /abortcontroller-polyfill@1.7.5:
     resolution:
@@ -1498,7 +1509,6 @@ packages:
         integrity: sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==,
       }
     engines: { node: ">=8.0.0" }
-    dev: false
 
   /avvio@8.2.1:
     resolution:
@@ -1615,7 +1625,6 @@ packages:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
-    dev: false
 
   /busboy@1.6.0:
     resolution:
@@ -1758,6 +1767,13 @@ packages:
         integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==,
       }
 
+  /colorette@2.0.20:
+    resolution:
+      {
+        integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==,
+      }
+    dev: true
+
   /combined-stream@1.0.8:
     resolution:
       {
@@ -1822,6 +1838,13 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  /dateformat@4.6.3:
+    resolution:
+      {
+        integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==,
+      }
+    dev: true
 
   /debug@4.3.4(supports-color@8.1.1):
     resolution:
@@ -1911,8 +1934,8 @@ packages:
       "@oclif/core": 1.26.2
       "@oclif/plugin-help": 5.2.9(@types/node@18.15.13)(typescript@5.0.4)
       "@oclif/plugin-not-found": 2.3.23(@types/node@18.15.13)(typescript@5.0.4)
-      "@oclif/plugin-update": 3.1.12(@types/node@18.15.13)(typescript@5.0.4)
-      "@oclif/plugin-warn-if-update-available": 2.0.35(@types/node@18.15.13)(typescript@5.0.4)
+      "@oclif/plugin-update": 3.1.13(@types/node@18.15.13)(typescript@5.0.4)
+      "@oclif/plugin-warn-if-update-available": 2.0.36(@types/node@18.15.13)(typescript@5.0.4)
       abortcontroller-polyfill: 1.7.5
       axios: 0.27.2
       chalk: 4.1.2
@@ -2192,7 +2215,6 @@ packages:
         integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==,
       }
     engines: { node: ">=6" }
-    dev: false
 
   /events@3.3.0:
     resolution:
@@ -2200,7 +2222,6 @@ packages:
         integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==,
       }
     engines: { node: ">=0.8.x" }
-    dev: false
 
   /execa@4.1.0:
     resolution:
@@ -2238,6 +2259,13 @@ packages:
         integrity: sha512-Xbc4XcysUXcsP5aHUU7Nq3OwvHq97C+WnbkeIefpeYLX+ryzFJlU6OStFJhs6Ol0LkUGpcK+wL0JwfM+FCU5IA==,
       }
     dev: false
+
+  /fast-copy@3.0.1:
+    resolution:
+      {
+        integrity: sha512-Knr7NOtK3HWRYGtHoJrjkaWepqT8thIVGAwt0p0aUs1zqkAzXZV4vo9fFNwyb5fcqK1GKYFYxldQdIDVKhUAfA==,
+      }
+    dev: true
 
   /fast-decode-uri-component@1.0.1:
     resolution:
@@ -2319,6 +2347,13 @@ packages:
       }
     engines: { node: ">=6" }
     dev: false
+
+  /fast-safe-stringify@2.1.1:
+    resolution:
+      {
+        integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==,
+      }
+    dev: true
 
   /fast-uri@2.2.0:
     resolution:
@@ -2598,6 +2633,20 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
+  /glob@8.1.0:
+    resolution:
+      {
+        integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==,
+      }
+    engines: { node: ">=12" }
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 5.1.6
+      once: 1.4.0
+    dev: true
+
   /globals@13.20.0:
     resolution:
       {
@@ -2661,11 +2710,11 @@ packages:
       "@envelop/core": 3.0.6
       "@envelop/validation-cache": 5.1.3(@envelop/core@3.0.6)(graphql@16.6.0)
       "@graphql-tools/executor": 0.0.18(graphql@16.6.0)
-      "@graphql-tools/schema": 9.0.18(graphql@16.6.0)
+      "@graphql-tools/schema": 9.0.19(graphql@16.6.0)
       "@graphql-tools/utils": 9.2.1(graphql@16.6.0)
       "@graphql-yoga/logger": 0.0.1
       "@graphql-yoga/subscription": 3.1.0
-      "@whatwg-node/fetch": 0.8.5
+      "@whatwg-node/fetch": 0.8.6
       "@whatwg-node/server": 0.7.5
       dset: 3.1.2
       graphql: 16.6.0
@@ -2694,6 +2743,16 @@ packages:
         integrity: sha512-KHzmSFx1KwyMPw0kXeeUD752q/Kfbzhy6dAZrjXV9kAIXGqzGvv8vhkUqj+2MGZldTo0IBpw6v7iWE7uxsvH0w==,
       }
     dev: false
+
+  /help-me@4.2.0:
+    resolution:
+      {
+        integrity: sha512-TAOnTB8Tz5Dw8penUuzHVrKNKlCIbwwbHnXraNJxPwf8LRtE2HlM84RYuezMFcwOJmoYOCWVDyJ8TQGxn9PgxA==,
+      }
+    dependencies:
+      glob: 8.1.0
+      readable-stream: 3.6.2
+    dev: true
 
   /http-call@5.3.0:
     resolution:
@@ -2956,6 +3015,14 @@ packages:
       minimatch: 3.1.2
     dev: true
 
+  /joycon@3.1.1:
+    resolution:
+      {
+        integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==,
+      }
+    engines: { node: ">=10" }
+    dev: true
+
   /js-sdsl@4.4.0:
     resolution:
       {
@@ -3202,6 +3269,13 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
+  /minimist@1.2.8:
+    resolution:
+      {
+        integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==,
+      }
+    dev: true
+
   /mkdirp-classic@0.5.3:
     resolution:
       {
@@ -3295,7 +3369,6 @@ packages:
       {
         integrity: sha512-VuCaZZAjReZ3vUwgOB8LxAosIurDiAW0s13rI1YwmaP++jvcxP77AWoQvenZebpCA2m8WC1/EosPYPMjnRAp/w==,
       }
-    dev: false
 
   /once@1.4.0:
     resolution:
@@ -3491,7 +3564,29 @@ packages:
     dependencies:
       readable-stream: 4.3.0
       split2: 4.2.0
-    dev: false
+
+  /pino-pretty@10.0.0:
+    resolution:
+      {
+        integrity: sha512-zKFjYXBzLaLTEAN1ayKpHXtL5UeRQC7R3lvhKe7fWs7hIVEjKGG/qIXwQt9HmeUp71ogUd/YcW+LmMwRp4KT6Q==,
+      }
+    hasBin: true
+    dependencies:
+      colorette: 2.0.20
+      dateformat: 4.6.3
+      fast-copy: 3.0.1
+      fast-safe-stringify: 2.1.1
+      help-me: 4.2.0
+      joycon: 3.1.1
+      minimist: 1.2.8
+      on-exit-leak-free: 2.1.0
+      pino-abstract-transport: 1.0.0
+      pump: 3.0.0
+      readable-stream: 4.3.0
+      secure-json-parse: 2.7.0
+      sonic-boom: 3.3.0
+      strip-json-comments: 3.1.1
+    dev: true
 
   /pino-std-serializers@6.2.0:
     resolution:
@@ -3556,16 +3651,16 @@ packages:
       prettier: 2.8.7
     dev: true
 
-  /prisma@4.13.0:
+  /prisma@4.9.0:
     resolution:
       {
-        integrity: sha512-L9mqjnSmvWIRCYJ9mQkwCtj4+JDYYTdhoyo8hlsHNDXaZLh/b4hR0IoKIBbTKxZuyHQzLopb/+0Rvb69uGV7uA==,
+        integrity: sha512-bS96oZ5oDFXYgoF2l7PJ3Mp1wWWfLOo8B/jAfbA2Pn0Wm5Z/owBHzaMQKS3i1CzVBDWWPVnOohmbJmjvkcHS5w==,
       }
     engines: { node: ">=14.17" }
     hasBin: true
     requiresBuild: true
     dependencies:
-      "@prisma/engines": 4.13.0
+      "@prisma/engines": 4.9.0
     dev: false
 
   /process-warning@2.2.0:
@@ -3581,7 +3676,6 @@ packages:
         integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==,
       }
     engines: { node: ">= 0.6.0" }
-    dev: false
 
   /proxy-addr@2.0.7:
     resolution:
@@ -3672,7 +3766,6 @@ packages:
       buffer: 6.0.3
       events: 3.3.0
       process: 0.11.10
-    dev: false
 
   /real-require@0.2.0:
     resolution:
@@ -3812,7 +3905,6 @@ packages:
       {
         integrity: sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==,
       }
-    dev: false
 
   /semver@5.7.1:
     resolution:
@@ -3895,7 +3987,6 @@ packages:
       }
     dependencies:
       atomic-sleep: 1.0.0
-    dev: false
 
   /split2@4.2.0:
     resolution:
@@ -3903,7 +3994,6 @@ packages:
         integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==,
       }
     engines: { node: ">= 10.x" }
-    dev: false
 
   /sprintf-js@1.0.3:
     resolution:

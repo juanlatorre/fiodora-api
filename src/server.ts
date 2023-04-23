@@ -1,8 +1,19 @@
 import fastify, { FastifyRequest, FastifyReply } from "fastify";
-import { schema } from "./schema";
+import { schema } from "./graphql/schema";
 import { createYoga } from "graphql-yoga";
+import { ENV } from "./env";
 
-const app = fastify({ logger: true });
+const app = fastify({
+  logger: {
+    transport: {
+      target: "pino-pretty",
+      options: {
+        translateTime: "HH:MM:ss Z",
+        ignore: "pid,hostname",
+      },
+    },
+  },
+});
 
 const yoga = createYoga<{
   req: FastifyRequest;
@@ -53,10 +64,6 @@ app.route({
   },
 });
 
-app.listen({ host: "0.0.0.0", port: 3000 }, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(`\nServer listening at ${address}`);
-});
+await app.listen({ host: "0.0.0.0", port: 3000 });
+
+console.log(`\nServer listening at http://0.0.0.0:${ENV.PORT}`);

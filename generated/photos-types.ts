@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { Prisma, User } from "../src/db";
+import type { Prisma, User } from "../src/prisma-client";
 export default interface PrismaTypes {
   User: {
     Name: "User";
