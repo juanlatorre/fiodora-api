@@ -1,12 +1,10 @@
 generator client {
-  provider      = "prisma-client-js"
-  output        = "../src/prisma-client"
-  binaryTargets = ["native"]
+  provider = "prisma-client-js"
 }
 
 generator pothos {
   provider     = "prisma-pothos-types"
-  clientOutput = "../src/prisma-client"
+  clientOutput = "@prisma/client"
   output       = "../generated/photos-types.ts"
 }
 

@@ -10,6 +10,9 @@ builder.queryField("user", (t) =>
       id: t.arg({
         type: "UUID",
         required: true,
+        validate: {
+          uuid: [true, { message: "Must provide a valid UUID" }],
+        },
       }),
     },
     resolve(query, _root, { id }) {
