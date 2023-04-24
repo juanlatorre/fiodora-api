@@ -1,3 +1,4 @@
+import { ZodError } from "zod";
 import { prisma } from "../../../../prisma";
 import { builder } from "../../builder";
 
@@ -6,14 +7,14 @@ builder.queryField("user", (t) =>
     type: "User",
     description: "Get user by id",
     errors: {
-      types: [Error],
+      types: [Error, ZodError],
     },
     args: {
       id: t.arg({
         type: "UUID",
         required: true,
         validate: {
-          uuid: [true, { message: "Must provide a valid UUID" }],
+          uuid: true,
         },
       }),
     },

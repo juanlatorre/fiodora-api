@@ -52,12 +52,12 @@ export const builder = new SchemaBuilder<{
     };
   };
 }>({
-  plugins: [PrismaPlugin, ValidationPlugin, ErrorsPlugin],
+  plugins: [ErrorsPlugin, PrismaPlugin, ValidationPlugin],
   prisma: {
     client: prisma,
   },
   errorOptions: {
-    defaultTypes: [],
+    defaultTypes: [Error],
   },
 });
 
