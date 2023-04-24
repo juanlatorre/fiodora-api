@@ -4,8 +4,10 @@ import { builder } from "../../builder";
 builder.queryField("user", (t) =>
   t.prismaField({
     type: "User",
-    nullable: true,
     description: "Get user by id",
+    errors: {
+      types: [Error],
+    },
     args: {
       id: t.arg({
         type: "UUID",
@@ -15,13 +17,19 @@ builder.queryField("user", (t) =>
         },
       }),
     },
-    resolve(query, _root, { id }) {
-      return prisma.user.findUnique({
+    async resolve(query, _root, { id }) {
+      const user = await prisma.user.findUnique({
         ...query,
         where: {
           id,
         },
       });
+
+      if (!user) {
+        throw new Error("User not found");
+      }
+
+      return user;
     },
   }),
 );

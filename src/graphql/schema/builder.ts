@@ -11,6 +11,7 @@ import {
 import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import ValidationPlugin from "@pothos/plugin-validation";
+import ErrorsPlugin from "@pothos/plugin-errors";
 import PrismaTypes from "../../../generated/photos-types";
 import { prisma } from "../../prisma";
 
@@ -51,9 +52,12 @@ export const builder = new SchemaBuilder<{
     };
   };
 }>({
-  plugins: [PrismaPlugin, ValidationPlugin],
+  plugins: [PrismaPlugin, ValidationPlugin, ErrorsPlugin],
   prisma: {
     client: prisma,
+  },
+  errorOptions: {
+    defaultTypes: [],
   },
 });
 
