@@ -36,13 +36,13 @@
     "@pothos/plugin-errors": "^3.11.1",
     "@pothos/plugin-prisma": "^3.50.0",
     "@pothos/plugin-validation": "^3.9.1",
-    "@prisma/client": "4.13.0",
+    "@prisma/client": "4.16.2",
     "dotenv": "^16.0.3",
     "fastify": "^4.17.0",
     "graphql": "^16.6.0",
     "graphql-scalars": "^1.21.3",
     "graphql-yoga": "^3.9.1",
-    "prisma": "4.13.0",
+    "prisma": "4.16.2",
     "zod": "^3.21.4"
   }
 }
