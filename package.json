@@ -17,26 +17,26 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.2",
-    "@types/node": "^20.1.0",
+    "@types/node": "^20.11.30",
     "bob-tsm": "^1.1.2",
-    "dotenv-vault": "^1.19.1",
-    "esbuild": "^0.17.18",
-    "husky": "^8.0.3",
-    "pino-pretty": "^10.0.0",
+    "dotenv-vault": "^1.26.1",
+    "esbuild": "^0.20.2",
+    "husky": "^9.0.11",
+    "pino-pretty": "^11.0.0",
     "prisma": "5.11.0",
-    "typescript": "~5.0.4"
+    "typescript": "~5.4.3"
   },
   "dependencies": {
-    "@pothos/core": "^3.30.0",
+    "@pothos/core": "^3.41.0",
     "@pothos/plugin-errors": "^3.11.1",
-    "@pothos/plugin-prisma": "^3.50.0",
-    "@pothos/plugin-validation": "^3.9.1",
+    "@pothos/plugin-prisma": "^3.65.0",
+    "@pothos/plugin-validation": "^3.10.1",
     "@prisma/client": "5.11.0",
-    "dotenv": "^16.0.3",
-    "fastify": "^4.17.0",
-    "graphql": "^16.6.0",
-    "graphql-scalars": "^1.21.3",
-    "graphql-yoga": "^3.9.1",
-    "zod": "^3.21.4"
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2",
+    "graphql": "^16.8.1",
+    "graphql-scalars": "^1.23.0",
+    "graphql-yoga": "^5.2.0",
+    "zod": "^3.22.4"
   }
 }
