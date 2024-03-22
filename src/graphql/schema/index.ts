@@ -1,5 +1,5 @@
-import "./types/index";
 import "./errors";
+import "./types/index";
 
 import { builder } from "./builder";
 

@@ -1,3 +1,11 @@
 {
-  "dotenv.enableAutocloaking": false
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"quickfix.biome": "always",
+		"source.organizeImports.biome": "always"
+	},
+  "dotenv.enableAutocloaking": false,
 }

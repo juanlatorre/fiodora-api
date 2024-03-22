@@ -1,7 +1,0 @@
-node_modules
-.env
-.env*
-.flaskenv*
-!.env.project
-!.env.vault
-src/prisma-client

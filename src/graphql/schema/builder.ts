@@ -1,64 +1,64 @@
-import {
-  DateTimeResolver,
-  UUIDResolver,
-  NonNegativeIntResolver,
-  NonNegativeFloatResolver,
-  PositiveIntResolver,
-  URLResolver,
-  NonEmptyStringResolver,
-  EmailAddressResolver,
-} from "graphql-scalars";
 import SchemaBuilder from "@pothos/core";
+import ErrorsPlugin from "@pothos/plugin-errors";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import ValidationPlugin from "@pothos/plugin-validation";
-import ErrorsPlugin from "@pothos/plugin-errors";
-import PrismaTypes from "../../../generated/photos-types";
+import {
+	DateTimeResolver,
+	EmailAddressResolver,
+	NonEmptyStringResolver,
+	NonNegativeFloatResolver,
+	NonNegativeIntResolver,
+	PositiveIntResolver,
+	URLResolver,
+	UUIDResolver,
+} from "graphql-scalars";
+import type PrismaTypes from "../../../generated/photos-types";
 import { prisma } from "../../prisma";
 
 export const builder = new SchemaBuilder<{
-  PrismaTypes: PrismaTypes;
-  Scalars: {
-    DateTime: {
-      Output: Date;
-      Input: Date;
-    };
-    UUID: {
-      Input: string;
-      Output: string;
-    };
-    NonNegativeInt: {
-      Input: number;
-      Output: number;
-    };
-    NonNegativeFloat: {
-      Input: number;
-      Output: number;
-    };
-    PositiveInt: {
-      Input: number;
-      Output: number;
-    };
-    URL: {
-      Input: URL;
-      Output: string | URL;
-    };
-    NonEmptyString: {
-      Input: string;
-      Output: string;
-    };
-    EmailAddress: {
-      Input: string;
-      Output: string;
-    };
-  };
+	PrismaTypes: PrismaTypes;
+	Scalars: {
+		DateTime: {
+			Output: Date;
+			Input: Date;
+		};
+		UUID: {
+			Input: string;
+			Output: string;
+		};
+		NonNegativeInt: {
+			Input: number;
+			Output: number;
+		};
+		NonNegativeFloat: {
+			Input: number;
+			Output: number;
+		};
+		PositiveInt: {
+			Input: number;
+			Output: number;
+		};
+		URL: {
+			Input: URL;
+			Output: string | URL;
+		};
+		NonEmptyString: {
+			Input: string;
+			Output: string;
+		};
+		EmailAddress: {
+			Input: string;
+			Output: string;
+		};
+	};
 }>({
-  plugins: [ErrorsPlugin, PrismaPlugin, ValidationPlugin],
-  prisma: {
-    client: prisma,
-  },
-  errorOptions: {
-    defaultTypes: [Error],
-  },
+	plugins: [ErrorsPlugin, PrismaPlugin, ValidationPlugin],
+	prisma: {
+		client: prisma,
+	},
+	errorOptions: {
+		defaultTypes: [Error],
+	},
 });
 
 builder.queryType();
