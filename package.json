@@ -24,7 +24,7 @@
     "husky": "^8.0.3",
     "pino-pretty": "^10.0.0",
     "prisma": "5.11.0",
-    "typescript": "~5.0.4"
+    "typescript": "~5.4.3"
   },
   "dependencies": {
     "@pothos/core": "^3.30.0",
