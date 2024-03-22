@@ -21,8 +21,8 @@ dependencies:
     specifier: 5.11.0
     version: 5.11.0(prisma@5.11.0)
   dotenv:
-    specifier: ^16.0.3
-    version: 16.0.3
+    specifier: ^16.4.5
+    version: 16.4.5
   fastify:
     specifier: ^4.17.0
     version: 4.17.0
@@ -1274,7 +1274,7 @@ packages:
     resolution: {integrity: sha512-C8qnftaiA8OZyCYI59Ex/e6/sEr1aIAUXLhp2bDoMsGgwNoBBfKakfG0hnZAxWKKJCCOflNZiO3M1B1oJRM0+A==}
     engines: {node: '>=12'}
     dependencies:
-      dotenv: 16.0.3
+      dotenv: 16.4.5
     dev: true
 
   /dotenv-vault@1.19.1(@types/node@20.1.0)(typescript@5.0.4):
@@ -1303,6 +1303,11 @@ packages:
 
   /dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: true
+
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
 
   /dset@3.1.2:
