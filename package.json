@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.11.30",
     "bob-tsm": "^1.1.2",
     "dotenv-vault": "^1.26.1",
@@ -30,13 +32,18 @@
     "@pothos/core": "^3.41.0",
     "@pothos/plugin-errors": "^3.11.1",
     "@pothos/plugin-prisma": "^3.65.0",
+    "@pothos/plugin-scope-auth": "^3.21.1",
     "@pothos/plugin-validation": "^3.10.1",
+    "@pothos/plugin-with-input": "^3.10.1",
     "@prisma/client": "5.11.0",
+    "apollo-server-errors": "^3.3.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "fastify": "^4.26.2",
     "graphql": "^16.8.1",
     "graphql-scalars": "^1.23.0",
     "graphql-yoga": "^5.2.0",
+    "jsonwebtoken": "^9.0.2",
     "zod": "^3.22.4"
   }
 }
