@@ -30,3 +30,26 @@ export const UserRef = builder.prismaObject("User", {
 });
 
 export type User = InferObjectType<typeof UserRef>;
+
+export const AuthPayloadRef = builder
+	.objectRef<{
+		token: string;
+		user?: User;
+	}>("AuthPayload")
+	.implement({
+		description: "The payload returned when a user logs in",
+		fields(t) {
+			return {
+				token: t.exposeID("token", {
+					description: "Auth token",
+				}),
+				user: t.expose("user", {
+					type: UserRef,
+					description: "User entity",
+					nullable: true,
+				}),
+			};
+		},
+	});
+
+export type AuthPayload = InferObjectType<typeof AuthPayloadRef>;
