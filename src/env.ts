@@ -10,6 +10,7 @@ dotenv.config({
 const envSchema = z.object({
 	PORT: z.string().transform((value) => Number.parseInt(value)),
 	DATABASE_URL: z.string().url(),
+	JWT_SECRET: z.string(),
 });
 
 export type Env = z.infer<typeof envSchema>;

@@ -18,6 +18,9 @@ export const UserRef = builder.prismaObject("User", {
 		email: t.exposeString("email", {
 			description: "User email",
 		}),
+		role: t.exposeString("role", {
+			description: "User role",
+		}),
 		createdAt: t.expose("createdAt", {
 			type: "DateTime",
 			description: "User creation date",

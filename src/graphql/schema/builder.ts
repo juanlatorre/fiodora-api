@@ -2,6 +2,7 @@ import SchemaBuilder from "@pothos/core";
 import ErrorsPlugin from "@pothos/plugin-errors";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import ValidationPlugin from "@pothos/plugin-validation";
+import WithInputPlugin from "@pothos/plugin-with-input";
 import {
 	DateTimeResolver,
 	EmailAddressResolver,
@@ -17,6 +18,10 @@ import { prisma } from "../../prisma";
 
 export const builder = new SchemaBuilder<{
 	PrismaTypes: PrismaTypes;
+	AuthScopes: {
+		isAuthenticated: boolean;
+		isAdmin: boolean;
+	};
 	Scalars: {
 		DateTime: {
 			Output: Date;
@@ -52,17 +57,26 @@ export const builder = new SchemaBuilder<{
 		};
 	};
 }>({
-	plugins: [ErrorsPlugin, PrismaPlugin, ValidationPlugin],
+	plugins: [
+		ErrorsPlugin,
+		PrismaPlugin,
+		ValidationPlugin,
+		// ScopeAuthPlugin,
+		WithInputPlugin,
+	],
 	prisma: {
 		client: prisma,
 	},
 	errorOptions: {
 		defaultTypes: [Error],
 	},
+	// scopeAuthOptions: {
+	// 	unauthorizedError: () => new NotAuthorizedError(),
+	// },
 });
 
 builder.queryType();
-// builder.mutationType();
+builder.mutationType();
 
 builder.addScalarType("DateTime", DateTimeResolver, {});
 builder.addScalarType("UUID", UUIDResolver, {});
