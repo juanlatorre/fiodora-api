@@ -6,6 +6,9 @@ builder.queryField("user", (t) =>
 	t.prismaField({
 		type: "User",
 		description: "Get user by id",
+		authScopes: {
+			isAdmin: true,
+		},
 		errors: {
 			types: [Error, ZodError],
 		},

@@ -1,8 +1,10 @@
 import SchemaBuilder from "@pothos/core";
 import ErrorsPlugin from "@pothos/plugin-errors";
 import PrismaPlugin from "@pothos/plugin-prisma";
+import ScopeAuthPlugin from "@pothos/plugin-scope-auth";
 import ValidationPlugin from "@pothos/plugin-validation";
 import WithInputPlugin from "@pothos/plugin-with-input";
+import { UserRole } from "@prisma/client";
 import {
 	DateTimeResolver,
 	EmailAddressResolver,
@@ -16,6 +18,7 @@ import {
 import type PrismaTypes from "../../../generated/photos-types";
 import { prisma } from "../../prisma";
 import type { GraphQLContext } from "../context";
+import { NotAuthorizedError } from "./errors";
 
 export const builder = new SchemaBuilder<{
 	Context: GraphQLContext;
@@ -63,7 +66,7 @@ export const builder = new SchemaBuilder<{
 		ErrorsPlugin,
 		PrismaPlugin,
 		ValidationPlugin,
-		// ScopeAuthPlugin,
+		ScopeAuthPlugin,
 		WithInputPlugin,
 	],
 	prisma: {
@@ -72,9 +75,21 @@ export const builder = new SchemaBuilder<{
 	errorOptions: {
 		defaultTypes: [Error],
 	},
-	// scopeAuthOptions: {
-	// 	unauthorizedError: () => new NotAuthorizedError(),
-	// },
+	scopeAuthOptions: {
+		unauthorizedError: () => new NotAuthorizedError(),
+	},
+	authScopes({ authentication, authorization }) {
+		return {
+			isAuthenticated() {
+				return authentication.hasUser;
+			},
+			async isAdmin() {
+				return await authorization.user.then(
+					(user) => user?.role === UserRole.ADMIN,
+				);
+			},
+		};
+	},
 });
 
 builder.queryType();

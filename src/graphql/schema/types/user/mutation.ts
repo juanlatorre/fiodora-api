@@ -53,6 +53,9 @@ builder.mutationField("createUser", (t) =>
 	t.fieldWithInput({
 		type: AuthPayloadRef,
 		description: "Create a new user",
+		authScopes: {
+			isAdmin: true,
+		},
 		input: {
 			email: t.input.string({ required: true, validate: { email: true } }),
 			name: t.input.string({ required: true }),

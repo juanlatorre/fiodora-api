@@ -1,4 +1,4 @@
-import type { InferObjectType } from "../../../helpers";
+import type { InferObjectType } from "../../../../helpers";
 import { builder } from "../../builder";
 
 export const UserRef = builder.prismaObject("User", {

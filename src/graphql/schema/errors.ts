@@ -1,6 +1,6 @@
 import { ApolloError } from "apollo-server-errors";
 import { ZodError } from "zod";
-import { flattenErrors } from "../helpers";
+import { flattenErrors } from "../../helpers";
 import { builder } from "./builder";
 
 const ErrorInterface = builder.interfaceRef<Error>("Error").implement({
