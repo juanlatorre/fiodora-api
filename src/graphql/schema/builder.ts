@@ -15,8 +15,10 @@ import {
 } from "graphql-scalars";
 import type PrismaTypes from "../../../generated/photos-types";
 import { prisma } from "../../prisma";
+import type { GraphQLContext } from "../context";
 
 export const builder = new SchemaBuilder<{
+	Context: GraphQLContext;
 	PrismaTypes: PrismaTypes;
 	AuthScopes: {
 		isAuthenticated: boolean;

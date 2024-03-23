@@ -1,6 +1,7 @@
 import fastify, { type FastifyRequest, type FastifyReply } from "fastify";
 import { createYoga } from "graphql-yoga";
 import { ENV } from "./env";
+import { createContext } from "./graphql/context";
 import { schema } from "./graphql/schema";
 
 const app = fastify({
@@ -20,6 +21,7 @@ const yoga = createYoga<{
 	reply: FastifyReply;
 }>({
 	schema,
+	context: createContext,
 	logging: {
 		debug: (...args) => args.forEach((arg) => app.log.debug(arg)),
 		info: (...args) => args.forEach((arg) => app.log.info(arg)),
