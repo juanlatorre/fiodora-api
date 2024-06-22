@@ -12,8 +12,8 @@ dependencies:
     specifier: ^3.11.1
     version: 3.11.1(@pothos/core@3.41.0)(graphql@16.8.1)
   '@pothos/plugin-prisma':
-    specifier: ^3.65.0
-    version: 3.65.0(@pothos/core@3.41.0)(@prisma/client@5.11.0)(graphql@16.8.1)(typescript@5.4.3)
+    specifier: ^3.65.3
+    version: 3.65.3(@pothos/core@3.41.0)(@prisma/client@5.11.0)(graphql@16.8.1)(typescript@5.4.3)
   '@pothos/plugin-scope-auth':
     specifier: ^3.21.1
     version: 3.21.1(@pothos/core@3.41.0)(graphql@16.8.1)
@@ -726,18 +726,18 @@ packages:
       graphql: 16.8.1
     dev: false
 
-  /@pothos/plugin-prisma@3.65.0(@pothos/core@3.41.0)(@prisma/client@5.11.0)(graphql@16.8.1)(typescript@5.4.3):
-    resolution: {integrity: sha512-1XYI139dceyzbEYW6wLVxhREFHHCmH2JLVCqRCn8Q9nAz7yfMYEfAA9nA/XhM5gJYoC0WAsrHgYQ4uBM+tH5BA==}
+  /@pothos/plugin-prisma@3.65.3(@pothos/core@3.41.0)(@prisma/client@5.11.0)(graphql@16.8.1)(typescript@5.4.3):
+    resolution: {integrity: sha512-fLdweQFjMBaGHgpO5CMQe8rKHBaVTEvYV4PLCtEDXC7mElnGKZBF5XVTk+d2l9P54DYchcYwDHWZ1CPpjF03ew==}
     hasBin: true
     peerDependencies:
       '@pothos/core': '*'
       '@prisma/client': '*'
-      graphql: '>=15.1.0'
+      graphql: ^16.8.1
       typescript: '>=4.7.2'
     dependencies:
       '@pothos/core': 3.41.0(graphql@16.8.1)
       '@prisma/client': 5.11.0(prisma@5.11.0)
-      '@prisma/generator-helper': 5.11.0
+      '@prisma/generator-helper': 5.15.1
       graphql: 16.8.1
       typescript: 5.4.3
     dev: false
@@ -790,6 +790,10 @@ packages:
   /@prisma/debug@5.11.0:
     resolution: {integrity: sha512-N6yYr3AbQqaiUg+OgjkdPp3KPW1vMTAgtKX6+BiB/qB2i1TjLYCrweKcUjzOoRM5BriA4idrkTej9A9QqTfl3A==}
 
+  /@prisma/debug@5.15.1:
+    resolution: {integrity: sha512-NQjdEplhXEcPvf84ghxExC+LD+iTimbg3sZvA3BhybVQIocBEBxFf9GTHhmRVPmjrWoBaYJBVgEEBXZT27JTbQ==}
+    dev: false
+
   /@prisma/engines-version@5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102:
     resolution: {integrity: sha512-WXCuyoymvrS4zLz4wQagSsc3/nE6CHy8znyiMv8RKazKymOMd5o9FP5RGwGHAtgoxd+aB/BWqxuP/Ckfu7/3MA==}
 
@@ -809,10 +813,10 @@ packages:
       '@prisma/engines-version': 5.11.0-15.efd2449663b3d73d637ea1fd226bafbcf45b3102
       '@prisma/get-platform': 5.11.0
 
-  /@prisma/generator-helper@5.11.0:
-    resolution: {integrity: sha512-oK25sTb2q2TPN7OipiU5xkCpDPNvdWvmFgU9UmmPr8uEt2CdwDjxiWonULgwd6YfqnCOLNpLq0wBIONjelaVMg==}
+  /@prisma/generator-helper@5.15.1:
+    resolution: {integrity: sha512-eTYGy6FSk2qflQfoXyzGhyCVIIAf+yL7YoSfLDBExSOB9kgug7pfSEWSwkce0CRxUskzx0XU/I4GDBj02laMfg==}
     dependencies:
-      '@prisma/debug': 5.11.0
+      '@prisma/debug': 5.15.1
     dev: false
 
   /@prisma/get-platform@5.11.0:
