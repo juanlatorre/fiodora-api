@@ -21,7 +21,7 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.11.30",
     "bob-tsm": "^1.1.2",
-    "dotenv-vault": "^1.26.1",
+    "dotenv-vault": "^1.26.2",
     "esbuild": "^0.20.2",
     "husky": "^9.0.11",
     "pino-pretty": "^11.0.0",
