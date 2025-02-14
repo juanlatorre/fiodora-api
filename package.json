@@ -44,6 +44,6 @@
     "graphql-scalars": "^1.23.0",
     "graphql-yoga": "^5.2.0",
     "jsonwebtoken": "^9.0.2",
-    "zod": "^3.22.4"
+    "zod": "^3.24.2"
   }
 }
