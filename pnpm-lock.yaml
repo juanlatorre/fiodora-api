@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^2.4.6
     version: 2.4.6
   '@types/jsonwebtoken':
-    specifier: ^9.0.6
-    version: 9.0.6
+    specifier: ^9.0.9
+    version: 9.0.9
   '@types/node':
     specifier: ^20.11.30
     version: 20.11.30
@@ -850,10 +850,15 @@ packages:
       '@types/node': 20.11.30
     dev: true
 
-  /@types/jsonwebtoken@9.0.6:
-    resolution: {integrity: sha512-/5hndP5dCjloafCXns6SZyESp3Ldq7YjH3zwzwczYnjxIT0Fqzk5ROSYVGfFyczIue7IUEj8hkvLbPoLQ18vQw==}
+  /@types/jsonwebtoken@9.0.9:
+    resolution: {integrity: sha512-uoe+GxEuHbvy12OUQct2X9JenKM3qAscquYymuQN4fMWG9DBQtykrQEFcAbVACF7qaLw9BePSodUL0kquqBJpQ==}
     dependencies:
+      '@types/ms': 2.1.0
       '@types/node': 20.11.30
+    dev: true
+
+  /@types/ms@2.1.0:
+    resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
     dev: true
 
   /@types/node@20.11.30:
