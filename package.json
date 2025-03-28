@@ -19,7 +19,7 @@
     "@biomejs/biome": "^1.6.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.17.28",
     "bob-tsm": "^1.1.2",
     "dotenv-vault": "^1.26.1",
     "esbuild": "^0.20.2",
