@@ -3,7 +3,11 @@ import jsonwebtoken from "jsonwebtoken";
 import type { ZodFormattedError, z } from "zod";
 import { ENV } from "./env";
 
-export type InferObjectType<T> = T extends PothosSchemaTypes.ObjectRef<infer A>
+export type InferObjectType<T> = T extends PothosSchemaTypes.ObjectRef<
+	// biome-ignore lint/correctness/noUnusedVariables: <explanation>
+	infer Types,
+	infer A
+>
 	? A
 	: never;
 

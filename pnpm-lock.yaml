@@ -20,12 +20,12 @@ importers:
       '@pothos/plugin-scope-auth':
         specifier: ^4.1.2
         version: 4.1.2(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)
-      '@pothos/plugin-validation':
-        specifier: ^3.10.2
-        version: 3.10.2(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)(zod@3.24.2)
       '@pothos/plugin-with-input':
         specifier: ^4.1.0
         version: 4.1.0(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)
+      '@pothos/plugin-zod':
+        specifier: ^4.2.0
+        version: 4.2.0(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)(zod@3.24.2)
       '@prisma/client':
         specifier: 6.5.0
         version: 6.5.0(prisma@6.5.0(typescript@5.8.2))(typescript@5.8.2)
@@ -448,18 +448,18 @@ packages:
       '@pothos/core': '*'
       graphql: '>=16.6.0'
 
-  '@pothos/plugin-validation@3.10.2':
-    resolution: {integrity: sha512-oA1z2NXYNozol47+opKiNzKc7+lfMKQeyu2oQd8ijQyRv+cMLpwx1kkd/E8gkt63XUpBWPmE7IZDJ6/Xyrfs3g==}
-    peerDependencies:
-      '@pothos/core': '*'
-      graphql: ^16.8.1
-      zod: '*'
-
   '@pothos/plugin-with-input@4.1.0':
     resolution: {integrity: sha512-iq8kBexRe3wqn3q8VlPeVq6OIJb60NcYBqIgWA35l5q6WRbSDwwzPyMY9EIcA5E8+vnbuPHUbRy4BAvrfif8Sg==}
     peerDependencies:
       '@pothos/core': '*'
       graphql: '>=16.6.0'
+
+  '@pothos/plugin-zod@4.2.0':
+    resolution: {integrity: sha512-1dE+Ii6w8LlcECUZ0LgkRqtI2Q2PUlxoQopeYCUcNc6CBrpdvh6hvNHJ76Zr4VWGw5fya4D+9FvyxyJcyud0nA==}
+    peerDependencies:
+      '@pothos/core': '*'
+      graphql: '>=16.6.0'
+      zod: '*'
 
   '@prisma/client@6.5.0':
     resolution: {integrity: sha512-M6w1Ql/BeiGoZmhMdAZUXHu5sz5HubyVcKukbLs3l0ELcQb8hTUJxtGEChhv4SVJ0QJlwtLnwOLgIRQhpsm9dw==}
@@ -1919,16 +1919,16 @@ snapshots:
       '@pothos/core': 4.5.1(graphql@16.10.0)
       graphql: 16.10.0
 
-  '@pothos/plugin-validation@3.10.2(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)(zod@3.24.2)':
-    dependencies:
-      '@pothos/core': 4.5.1(graphql@16.10.0)
-      graphql: 16.10.0
-      zod: 3.24.2
-
   '@pothos/plugin-with-input@4.1.0(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)':
     dependencies:
       '@pothos/core': 4.5.1(graphql@16.10.0)
       graphql: 16.10.0
+
+  '@pothos/plugin-zod@4.2.0(@pothos/core@4.5.1(graphql@16.10.0))(graphql@16.10.0)(zod@3.24.2)':
+    dependencies:
+      '@pothos/core': 4.5.1(graphql@16.10.0)
+      graphql: 16.10.0
+      zod: 3.24.2
 
   '@prisma/client@6.5.0(prisma@6.5.0(typescript@5.8.2))(typescript@5.8.2)':
     optionalDependencies:

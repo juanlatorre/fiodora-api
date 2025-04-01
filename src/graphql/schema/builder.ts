@@ -2,8 +2,8 @@ import SchemaBuilder from "@pothos/core";
 import ErrorsPlugin from "@pothos/plugin-errors";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import ScopeAuthPlugin from "@pothos/plugin-scope-auth";
-import ValidationPlugin from "@pothos/plugin-validation";
 import WithInputPlugin from "@pothos/plugin-with-input";
+import ZodPlugin from "@pothos/plugin-zod";
 import { UserRole } from "@prisma/client";
 import {
 	DateTimeResolver,
@@ -65,30 +65,30 @@ export const builder = new SchemaBuilder<{
 	plugins: [
 		ErrorsPlugin,
 		PrismaPlugin,
-		ValidationPlugin,
+		ZodPlugin,
 		ScopeAuthPlugin,
 		WithInputPlugin,
 	],
 	prisma: {
 		client: prisma,
 	},
-	errorOptions: {
+	errors: {
 		defaultTypes: [Error],
 	},
-	scopeAuthOptions: {
+	scopeAuth: {
 		unauthorizedError: () => new NotAuthorizedError(),
-	},
-	authScopes({ authentication, authorization }) {
-		return {
-			isAuthenticated() {
-				return authentication.hasUser;
-			},
-			async isAdmin() {
-				return await authorization.user.then(
-					(user) => user?.role === UserRole.ADMIN,
-				);
-			},
-		};
+		authScopes({ authentication, authorization }) {
+			return {
+				isAuthenticated() {
+					return authentication.hasUser;
+				},
+				async isAdmin() {
+					return await authorization.user.then(
+						(user) => user?.role === UserRole.ADMIN,
+					);
+				},
+			};
+		},
 	},
 });
 

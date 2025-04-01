@@ -42,6 +42,7 @@ export const AuthPayloadRef = builder
 			return {
 				token: t.exposeID("token", {
 					description: "Auth token",
+					nullable: true,
 				}),
 				user: t.expose("user", {
 					type: UserRef,
