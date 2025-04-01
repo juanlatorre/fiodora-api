@@ -10,7 +10,7 @@
 		"dev": "tsx watch src/server.ts",
 		"env:dev": "dotenv-vault pull development",
 		"env:prod": "dotenv-vault pull production",
-		"lint": "biome check --apply ./src",
+		"lint": "biome check --write ./src",
 		"prepare": "husky install && npx prisma generate",
 		"start": "tsx src/server.ts",
 		"typecheck": "tsc"
