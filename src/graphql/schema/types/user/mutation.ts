@@ -6,7 +6,6 @@ import { prisma } from "../../../../prisma";
 import { builder } from "../../builder";
 import { AuthPayloadRef } from "./type";
 
-// Login mutation
 builder.mutationField("login", (t) =>
 	t.fieldWithInput({
 		type: AuthPayloadRef,
@@ -48,7 +47,6 @@ builder.mutationField("login", (t) =>
 	}),
 );
 
-// Create User mutation
 builder.mutationField("createUser", (t) =>
 	t.fieldWithInput({
 		type: AuthPayloadRef,
